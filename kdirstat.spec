@@ -57,6 +57,6 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/kdirstat
 %{_datadir}/apps/kdirstat
-%{_desktopdir}/dirstat.desktop
+%{_desktopdir}/kdirstat.desktop
 %{_pixmapsdir}/kdirstat.png
 %{_pixmapsdir}/*/*/apps/*.png

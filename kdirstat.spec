@@ -56,4 +56,4 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/apps/kdirstat
 %{_desktopdir}/kdirstat.desktop
 %{_pixmapsdir}/kdirstat.png
-%{_pixmapsdir}/*/*/apps/*.png
+%{_iconsdir}/*/*/apps/*.png

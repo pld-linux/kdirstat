@@ -6,6 +6,7 @@ Release:	2
 License:	GPL
 Group:		X11/Applications
 Source0:	http://kdirstat.sourceforge.net/download/%{name}-%{version}.tgz
+# Source0-md5:	e8a647c8725bf12e9b2c870d6c4791a0
 Source1:	%{name}.png
 URL:		http://kdirstat.sourceforge.net/
 BuildRequires:	autoconf

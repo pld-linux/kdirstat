@@ -2,7 +2,7 @@ Summary:	KDirStat - disk usage utility
 Summary(pl):	KDirStat - narzêdzie pokazuj±ce zajêto¶æ dysku
 Name:		kdirstat
 Version:	2.2.0
-Release:	1
+Release:	1.1
 License:	GPL
 Group:		X11/Applications
 Source0:	http://kdirstat.sourceforge.net/download/%{name}-%{version}.tgz

@@ -31,17 +31,22 @@ zwolnienia miejsca.
 %build
 kde_htmldir="%{_htmldir}"; export kde_htmldir
 kde_icondir="%{_pixmapsdir}"; export kde_icondir
-%configure
+cp -f /usr/share/automake/config.sub admin
+%configure \
+	--with-qt-libraries=%{_libdir}
 %{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{_pixmapsdir}
+install -d $RPM_BUILD_ROOT{%{_pixmapsdir},%{_desktopdir}}
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
 install %{SOURCE1} $RPM_BUILD_ROOT%{_pixmapsdir}
+
+mv $RPM_BUILD_ROOT%{_datadir}/applnk/Utilities/kdirstat.desktop \
+	$RPM_BUILD_ROOT%{_desktopdir}
 
 %find_lang %{name} --with-kde
 
@@ -52,6 +57,6 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/kdirstat
 %{_datadir}/apps/kdirstat
-%{_applnkdir}/Utilities/kdirstat.desktop
+%{_desktopdir}/dirstat.desktop
 %{_pixmapsdir}/kdirstat.png
 %{_pixmapsdir}/*/*/apps/*.png

@@ -1,7 +1,8 @@
 Summary:	KDirStat - disk usage utility
+Summary(pl):	KDirStat - narzêdzie pokazuj±ce zajêto¶æ dysku
 Name:		kdirstat
 Version:	2.0.1
-Release:	1
+Release:	2
 License:	GPL
 Group:		X11/Applications
 Source0:	http://kdirstat.sourceforge.net/download/%{name}-%{version}.tgz
@@ -18,6 +19,11 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 Graphical disk usage utility, very much like the Unix "du" command,
 plus some cleanup facilities to reclaim disk space.
+
+%description -l pl
+Graficzne narzêdzie pokazuj±ce zajêto¶æ dysku, podobne do uniksowego
+polecenia "du" z dodatkowymi mo¿liwo¶ciami sprz±tania w celu
+zwolnienia miejsca.
 
 %prep
 %setup -q

@@ -2,7 +2,7 @@ Summary:	KDirStat - disk usage utility
 Summary(pl):	KDirStat - narzêdzie pokazuj±ce zajêto¶æ dysku
 Name:		kdirstat
 Version:	2.2.0
-Release:	1.1
+Release:	1.2
 License:	GPL
 Group:		X11/Applications
 Source0:	http://kdirstat.sourceforge.net/download/%{name}-%{version}.tgz
@@ -32,7 +32,7 @@ zwolnienia miejsca.
 %build
 kde_htmldir="%{_htmldir}"; export kde_htmldir
 kde_icondir="%{_pixmapsdir}"; export kde_icondir
-%{__make} -f Makefile.cvs
+#%{__make} -f Makefile.cvs
 %configure
 %{__make}
 

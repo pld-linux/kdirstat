@@ -1,37 +1,49 @@
-Name: kdirstat
-Summary: KDirStat - disk usage utility
-Version: 1.7.8
-Release: 1
-Copyright: GPL
-Group: X11/KDE/Development
-Source: http://kdirstat.sourceforge.net/download/kdirstat-1.7.8-devel.tar.gz
-Packager: Alexander Rawass <alexannika@users.sourceforge.net>
-BuildRoot: /tmp/kd/kdirstat-1.7.8-devel
-Prefix: /usr/local
+Summary:	KDirStat - disk usage utility
+Name:		kdirstat
+Version:	2.0.1
+Release:	1
+License:	GPL
+Group:		X11/Applications
+Source0:	http://kdirstat.sourceforge.net/download/%{name}-%{version}.tgz
+Source1:	%{name}.png
+URL:		http://kdirstat.sourceforge.net/
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	kdelibs-devel
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+
+%define		_prefix		/usr/X11R6
+%define		_mandir		%{_prefix}/man
 
 %description
-A du-tool that displays disk-usage information in a normal tree view
-and with a treemap
+Graphical disk usage utility, very much like the Unix "du" command,
+plus some cleanup facilities to reclaim disk space.
 
 %prep
-rm -rf $RPM_BUILD_ROOT
-%setup -n kdirstat-1.7.8-devel
+%setup -q
 
 %build
-./configure --prefix=/usr/local
-make
+%{__make} -f Makefile.cvs
+%configure
+%{__make}
 
 %install
-make DESTDIR=$RPM_BUILD_ROOT install
+rm -rf $RPM_BUILD_ROOT
+install -d $RPM_BUILD_ROOT%{_pixmapsdir}
+
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT
+
+install %{SOURCE1} $RPM_BUILD_ROOT%{_pixmapsdir}
+
+#%find_lang %{name} --with-kde
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
-%{prefix}/share/apps/kdirstat/icons/locolor/16x16/actions/symlink.png
-%{prefix}/share/apps/kdirstat/kdirstatui.rc
-%{prefix}/share/applnk/Applications/kdirstat.desktop
-%{prefix}/share/icons/locolor/32x32/apps/kdirstat.png
-%{prefix}/share/icons/locolor/16x16/apps/kdirstat.png
-%{prefix}/share/doc/HTML/en/kdirstat/index.docbook
-%{prefix}/bin/kdirstat
+%defattr(644,root,root,755)
+%attr(755,root,root) %{_bindir}/kdirstat
+%{_datadir}/apps/kdirstat
+%{_applnkdir}/Utilities/kdirstat.desktop
+%{_pixmapsdir}/kdirstat.png

@@ -15,6 +15,7 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
 %define		_mandir		%{_prefix}/man
+%define		_htmldir	/usr/share/doc/kde/HTML
 
 %description
 Graphical disk usage utility, very much like the Unix "du" command,
@@ -29,6 +30,8 @@ zwolnienia miejsca.
 %setup -q
 
 %build
+kde_htmldir="%{_htmldir}"; export kde_htmldir
+kde_icondir="%{_pixmapsdir}"; export kde_icondir
 %{__make} -f Makefile.cvs
 %configure
 %{__make}
@@ -53,5 +56,4 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/apps/kdirstat
 %{_applnkdir}/Utilities/kdirstat.desktop
 %{_pixmapsdir}/kdirstat.png
-%{_datadir}/doc/HTML/en/kdirstat/*
-%{_datadir}/icons/*/*/apps/*.png
+%{_pixmapsdir}/*/*/apps/*.png

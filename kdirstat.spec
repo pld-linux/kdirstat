@@ -14,8 +14,6 @@ BuildRequires:	automake
 BuildRequires:	kdelibs-devel >= 3
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		_htmldir	/usr/share/doc/kde/HTML
-
 %description
 Graphical disk usage utility, very much like the Unix "du" command,
 plus some cleanup facilities to reclaim disk space.
@@ -29,8 +27,7 @@ zwolnienia miejsca.
 %setup -q
 
 %build
-kde_htmldir="%{_htmldir}"; export kde_htmldir
-kde_icondir="%{_pixmapsdir}"; export kde_icondir
+kde_htmldir="%{_kdedocdir}"; export kde_htmldir
 cp -f /usr/share/automake/config.sub admin
 %configure \
 	--with-qt-libraries=%{_libdir}

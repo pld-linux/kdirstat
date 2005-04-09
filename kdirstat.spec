@@ -1,17 +1,18 @@
 Summary:	KDirStat - disk usage utility
 Summary(pl):	KDirStat - narzêdzie pokazuj±ce zajêto¶æ dysku
 Name:		kdirstat
-Version:	2.4.3
+Version:	2.4.4
 Release:	1
 License:	GPL
 Group:		X11/Applications
 Source0:	http://kdirstat.sourceforge.net/download/%{name}-%{version}.tar.bz2
-# Source0-md5:	044789b98d8f2c92227a31cc758a7587
+# Source0-md5:	6eb948021d63fc44966d5a29a2f35d9a
 Source1:	%{name}.png
 URL:		http://kdirstat.sourceforge.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	kdelibs-devel >= 3
+BuildRequires:	rpmbuild(macros) >= 1.129
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -52,6 +53,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
+%doc AUTHORS ChangeLog README TODO
 %attr(755,root,root) %{_bindir}/kdirstat
 %{_datadir}/apps/kdirstat
 %{_desktopdir}/kdirstat.desktop

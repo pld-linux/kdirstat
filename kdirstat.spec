@@ -8,6 +8,7 @@ Group:		X11/Applications
 Source0:	http://kdirstat.sourceforge.net/download/%{name}-%{version}.tar.bz2
 # Source0-md5:	6eb948021d63fc44966d5a29a2f35d9a
 Source1:	%{name}.png
+Patch0:		%{name}-desktop.patch
 URL:		http://kdirstat.sourceforge.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -26,6 +27,7 @@ zwolnienia miejsca.
 
 %prep
 %setup -q
+%patch -p1
 
 %build
 kde_htmldir="%{_kdedocdir}"; export kde_htmldir

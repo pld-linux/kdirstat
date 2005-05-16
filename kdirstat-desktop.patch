@@ -1,16 +1,16 @@
 --- kdirstat-2.4.4/kdirstat/kdirstat.desktop~	Mon May 16 11:39:15 2005
 +++ kdirstat-2.4.4/kdirstat/kdirstat.desktop	Mon May 16 11:39:15 2005
-@@ -9,12 +9,12 @@
+@@ -9,11 +9,12 @@
  Comment=Directory statistics and disk usage
  Comment[de]=Verzeichnisstatistik und Platzverbrauch
  Comment[hu]=Könyvtárstatisztikák és szabad hely
--Comment[pl]=Statystyki katalog�w i zaj�to�� dysku
+-Terminal=0
 +Comment[pl]=Statystyki katalogów i zajętość dysku
- Terminal=false
++Terminal=false
  Name=KDirStat - Directory Statistics
  Name[de]=KDirStat - Verzeichnisstatistik
  Name[hu]=KDirStat könyvtárstatisztika
--Name[pl]=KDirStat - statystyki katalog�w
+-
 +Name[pl]=KDirStat - statystyki katalogów
  MimeType=inode/directory
  

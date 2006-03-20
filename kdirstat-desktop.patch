@@ -1,21 +1,22 @@
-diff -urN kdirstat-2.4.4/kdirstat/kdirstat.desktop kdirstat-2.4.4.new/kdirstat/kdirstat.desktop
---- kdirstat-2.4.4/kdirstat/kdirstat.desktop	2003-09-15 17:49:22.000000000 +0200
-+++ kdirstat-2.4.4.new/kdirstat/kdirstat.desktop	2005-05-25 21:04:11.000000000 +0200
-@@ -9,12 +9,14 @@
+--- kdirstat-2.5.2/kdirstat/kdirstat.desktop.orig	2005-10-07 13:11:06.000000000 +0200
++++ kdirstat-2.5.2/kdirstat/kdirstat.desktop	2006-03-19 14:36:10.000000000 +0100
+@@ -7,14 +7,15 @@
+ MiniIcon=kdirstat.png
+ DocPath=kdirstat/index.html
+ Encoding=UTF-8
+-Terminal=0
++Terminal=false
+ Name=KDirStat
+ GenericName=Directory Statistics
+ GenericName[de]=Verzeichnisstatistik
+ GenericName[hu]=könyvtárstatisztika
++GenericName[pl]=KDirStat - statystyki katalogów
  Comment=Directory statistics and disk usage
  Comment[de]=Verzeichnisstatistik und Platzverbrauch
  Comment[hu]=Könyvtárstatisztikák és szabad hely
--Terminal=0
-+Comment[pl]=Statystyki katalogów i zajętość dysku
-+Terminal=false
- Name=KDirStat - Directory Statistics
- Name[de]=KDirStat - Verzeichnisstatistik
- Name[hu]=KDirStat könyvtárstatisztika
 -
-+Name[pl]=KDirStat - statystyki katalogów
- MimeType=inode/directory
 -
+-
++Comment[pl]=Statystyki katalogów i zaj�.to�.�. dysku
 +Categories=Qt;KDE;System;Monitor;
 +# vi: encoding=utf-8
- 
- 

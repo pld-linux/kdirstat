@@ -1,5 +1,5 @@
 Summary:	KDirStat - disk usage utility
-Summary(pl.UTF-8):   KDirStat - narzędzie pokazujące zajętość dysku
+Summary(pl.UTF-8):	KDirStat - narzędzie pokazujące zajętość dysku
 Name:		kdirstat
 Version:	2.5.3
 Release:	1

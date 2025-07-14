@@ -27,7 +27,7 @@ zwolnienia miejsca.
 
 %prep
 %setup -q
-%patch0 -p1
+%patch -P0 -p1
 
 %build
 kde_htmldir="%{_kdedocdir}"; export kde_htmldir
